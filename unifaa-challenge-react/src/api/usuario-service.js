@@ -15,3 +15,40 @@ function salvarToken(token){
 function salvarUsuario(usuario){
     localStorage.setItem('usuario', JSON.stringify(usuario));
 }
+
+function obterToken(){
+    return localStorage.getItem("token") // returns token value
+}
+
+function obterUsuario(){
+    return localStorage.getItem("usuario") || "{}"; // returns item user or nothing
+}
+
+function sairSistema(){
+    localStorage.removeItem("token"); //remove the "token" item, clear 
+    localStorage.removeItem("usuario");
+    direcionarTelaDeLogin();
+}
+
+function direcionarTelaDeLogin(){
+    window.open('/login','_self');
+}
+
+function usuarioEstaLogado(){
+    let token = obterToken();
+
+    return !!token;
+}
+
+function validarUsuarioAutenticado(){
+
+    let logado = usuarioEstaLogado();
+
+    if(window.location.pathname == "/login"){
+        if(logado){
+            window.open("/", '_self')
+        }
+    } else if(!logado && window.location.pathname != "/login"){
+        direcionarTelaDeLogin();
+    }
+}
