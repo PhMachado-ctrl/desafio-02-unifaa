@@ -1,6 +1,6 @@
 # desafio-02-unifaa
 
-# Create File
+# Create Project
 npx create-react-app nome-projeto
 # install Alert
 npm install --save sweetalert2 sweetalert2-react-content
