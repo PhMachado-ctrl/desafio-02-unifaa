@@ -52,3 +52,12 @@ function validarUsuarioAutenticado(){
         direcionarTelaDeLogin();
     }
 }
+
+export default {
+    autenticar,
+    salvarToken,
+    salvarUsuario,
+    sairSistema,
+    obterToken,
+    obterUsuario
+}
