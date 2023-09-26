@@ -7,3 +7,11 @@ function autenticar(email, senha){
         .catch(erro => reject(erro))
     });
 }
+
+function salvarToken(token){
+    localStorage.setItem('token', token)
+}
+
+function salvarUsuario(usuario){
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+}
